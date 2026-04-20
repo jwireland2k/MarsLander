@@ -27,7 +27,7 @@ print()
 print("The ideal tuning parameters from 1D test used in this test are: K_h: " + 
       '{:.3f}'.format(round(K_h, 3)) + ", " + "K_p: " + '{:.3f}'.format(round(K_p, 3)))
 print()
-start_time = time.clock()
+start_time = time.perf_counter()
 
 # Number of parameter combinations to be tested
 Trial_combinations = np.size(K_diffxlist) * np.size(K_pxlist)
@@ -91,7 +91,7 @@ pp = pprint.PrettyPrinter(width=250)
 pp.pprint(top_fiveP)
 print()
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(Trial_combinations) + " Proportional autopilot trials.")
 print("\n")
@@ -115,7 +115,7 @@ print("The ideal tuning parameters from 1D test used in this test are: K_h: " +
       ", " + "K_i: " + '{:.3f}'.format(round(K_i, 3)))
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 Trial_combinations = np.size(K_diffxlist) * np.size(K_pxlist) * np.size(K_ixlist)
 
@@ -176,7 +176,7 @@ pp = pprint.PrettyPrinter(width=250)
 pp.pprint(top_fivePI)
 print()
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(Trial_combinations) + " PI autopilot trials.")
 print("\n")
@@ -200,7 +200,7 @@ print("The ideal tuning parameters from 1D test used in this test are: K_h: " +
       "K_i: " + '{:.3f}'.format(round(K_i, 3)) + ", " + "K_d: " + '{:.3f}'.format(round(K_d, 3)))
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 Trial_combinations = np.size(
     K_diffxlist) * np.size(K_pxlist) * np.size(K_ixlist) * np.size(K_dxlist)
@@ -265,7 +265,7 @@ for i in top_fivePID:
 pp = pprint.PrettyPrinter(width=250)
 pp.pprint(top_fivePID)
 print()
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(Trial_combinations) + " PID autopilot trials.")
 print("\n")

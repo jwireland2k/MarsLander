@@ -16,7 +16,7 @@ K_dlist = list(np.linspace(a4, b4, c4))
 # Automated Testing (P Vertical)
 print("Initialising proportional autopilot testing:")
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 # Number of parameter combinations to be tested
 Trial_combinations = np.size(K_hlist) * np.size(K_plist)
@@ -77,7 +77,7 @@ pp = pprint.PrettyPrinter(width=200)
 pp.pprint(top_fiveP)
 print()
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(Trial_combinations) + " Proportional autopilot trials.")
 print("\n")
@@ -87,7 +87,7 @@ print("\n")
 print("Initialising proportional-integral autopilot testing:")
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 Trial_combinations = np.size(
     K_hlist) * np.size(K_plist) * np.size(K_ilist)
@@ -145,7 +145,7 @@ pp = pprint.PrettyPrinter(width=200)
 pp.pprint(top_fivePI)
 print()
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(Trial_combinations) + " PI autopilot trials.")
 print("\n")
@@ -155,7 +155,7 @@ print("\n")
 print("Initialising proportional-integral-derivative autopilot testing:")
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 Trial_combinations = np.size(
     K_hlist) * np.size(K_plist) * np.size(K_ilist) * np.size(K_dlist)
@@ -216,7 +216,7 @@ pp = pprint.PrettyPrinter(width=200)
 pp.pprint(top_fivePID)
 print()
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(Trial_combinations) + " PID autopilot trials.")
 print("\n")

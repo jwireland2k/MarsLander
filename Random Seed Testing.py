@@ -35,7 +35,7 @@ parameters = {'K_h': K_h,
 print("Initialising proportional autopilot testing on random seeds:")
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 for i in range(ntest):
     land, landing_site = mars_surface()
@@ -65,7 +65,7 @@ with open('randomseedP.csv', 'w', newline='') as csvfile:
         writer.writerow([str(row[1]), str(row[3]), str(row[5]), str(row[7]), str(row[9]), str(row[11]), 
                          str(row[13]), row[14], row[16]])
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(ntest) + " P autopilot trials.")
@@ -114,7 +114,7 @@ parameters = {'K_h': K_h,
 print("Initialising proportional-integral autopilot testing on random seeds:")
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 for i in range(ntest):
     land, landing_site = mars_surface()
@@ -144,7 +144,7 @@ with open('randomseedPI.csv', 'w', newline='') as csvfile:
         writer.writerow([str(row[1]), str(row[3]), str(row[5]), str(row[7]), str(row[9]), str(row[11]), 
                          str(row[13]), row[14], row[16]])
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(ntest) + " PI autopilot trials.")
@@ -194,7 +194,7 @@ parameters = {'K_h': K_h,
 print("Initialising proportional-integral-derivative autopilot testing on random seeds:")
 print()
 
-start_time = time.clock()
+start_time = time.perf_counter()
 
 for i in range(ntest):
     land, landing_site = mars_surface()
@@ -224,7 +224,7 @@ with open('randomseedPID.csv', 'w', newline='') as csvfile:
         writer.writerow([str(row[1]), str(row[3]), str(row[5]), str(row[7]), str(row[9]), str(row[11]), 
                          str(row[13]), row[14], row[16]])
 
-trial_time = time.clock() - start_time
+trial_time = time.perf_counter() - start_time
 
 print("It took " + f'{trial_time:.3f}' + " seconds to test " +
       str(ntest) + " PID autopilot trials.")
